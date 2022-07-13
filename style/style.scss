@@ -1,0 +1,300 @@
+$font-Josefin: 'Josefin Sans', sans-serif;
+$font-alata: 'Alata', sans-serif;
+$Dark-Gray: hsl(0, 0%, 55%);
+$Very-Dark-Gray: hsl(0, 0%, 41%);
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $font-Josefin;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+header {
+    color: #fff;
+    background: url('../images/desktop/image-hero.jpg') no-repeat center center/cover;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: overlay;
+    padding: 3% 9%;
+    height: 100vh;
+    font-weight: bold;
+    position: relative;
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            font-family: $font-alata;
+            font-size: 2.5rem;
+            flex: 1;
+        }
+
+        .navbar-links {
+            flex: 1;
+            text-align: right;
+        }
+
+        .navbar-links a {
+            margin-left: 5%;
+        }
+
+        .navbar-links a:hover {
+            color: darkgray;
+        }
+    }
+
+    .header-text {
+        position: absolute;
+        top: 40%;
+        border: 1px solid #fff;
+        font-size: 4.5rem;
+        display: inline-block;
+        width: 45%;
+        padding: 2%;
+        font-weight: normal;
+        text-transform: uppercase;
+    }
+}
+
+#interactive {
+    padding: 7% 9%;
+
+    .interactive-img {
+        width: 60%;
+        position: relative;
+    }
+    .interactive-img img {
+        width: 100%;
+    }
+
+    .interactive-text {
+        position: absolute;
+        top: 30%;
+        left: 78%;
+        background: #fff;
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        padding: 13%;
+
+        h1 {
+            font-size: 2.7rem;
+            text-transform: uppercase;
+            color: #1b1b1b;
+            margin-bottom: 5%;
+            font-weight: normal;
+        }
+
+        p {
+            line-height: 1.7;
+            margin-top: 7%;
+            font-size: 1.1rem;
+            word-spacing: 3px;
+            color: $Very-Dark-Gray;
+        }
+    }
+}
+
+#creation {
+    padding: 2% 9%;
+    text-transform: uppercase;
+
+    .creation-text {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 5% 0;
+
+        h1 {
+            font-size: 2.7rem;
+            font-weight: normal;
+        }
+
+        .btn {
+            display: inline-block;
+            border: 2px solid #000;
+            color: #000;
+            padding: .8% 4%;
+            font-family: $font-alata;
+            letter-spacing: 2px;
+            word-spacing: 3px;
+        }
+
+        .btn:hover {
+            background: #000;
+            color: #fff;
+        }
+    }
+
+    .creation-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .card {
+            position: relative;
+            margin-bottom: 2%;
+            transition: ease-in-out;
+            transition-property: opacity;
+            transition-duration: .5s;
+        }
+
+        .card-text {
+            position: absolute;
+            bottom: 1%;
+            color: #fff;
+            background: linear-gradient(to top, rgba(0,0,0,.8), rgba(0,0,0,0));
+            width: 100%;
+            padding: 5% 15% 10%;
+            font-size: 2rem;
+            line-height: 1.2;
+            transition: ease-in-out;
+            transition-property: padding;
+            transition-duration: .4s;
+        }
+
+        .card:hover {
+            opacity: .7;
+            transition: ease-in-out;
+            transition-property: opacity;
+            transition-duration: .5s;
+            .card-text {
+                padding: 5% 15% 20%;
+                transition: ease-in-out;
+                transition-property: padding;
+                transition-duration: .4s;
+            }
+        }
+
+    }
+}
+
+footer {
+    background: #000;
+    padding: 3% 9%;
+    margin-top: 2%;
+    color: #fff;
+    
+
+    .footer-one {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            flex: 1;
+            font-family: $font-alata;
+            font-size: 1.8rem;
+            margin-bottom: 2%;
+        }
+
+        .social-links {
+            flex: 1;
+            text-align: end;
+        }
+
+        .social-links img {
+            margin-left: 1.2%;
+            padding-bottom: 6px;
+        }
+
+        .social-links img:hover {
+            border-bottom: 1px solid darkgray;
+        }
+    }
+
+    .footer-two {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .footer-links {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            font-family: $font-alata;
+        }
+
+        .footer-links a:hover {
+            color: darkgray;
+        }
+
+        .copyright {
+            flex: 2;
+            color: $Dark-Gray;
+            font-family: $font-alata;
+            text-align: end;
+        }
+    }
+}
+
+
+@media(max-width: 1024px) {
+    header {
+        .header-text {
+            font-size: 3rem;
+        }
+    }
+
+    #creation {
+        padding: 2% 13%;
+        .creation-cards {
+            width: 70%;
+            margin: auto;
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    header {
+        padding: 3%;
+        nav {
+            .log {
+                font-size: 1rem;
+            }
+            .navbar-links {
+                flex: 2;
+            }
+            
+        }
+        .header-text {
+            font-size: 2rem;
+        }
+    }
+    
+    #interactive {
+        padding: 5%;
+
+        .interactive-text {
+            top: 25%;
+            padding: 7%;
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 2%;
+            }
+            p {
+                line-height: 1;
+                margin-top: 2%;
+            }
+        }
+    }
+
+    #creation {
+        padding: 2% 5%;
+
+        .creation-cards {
+            width: 90%;
+            padding: 0 4%;
+        }
+    }
+}
